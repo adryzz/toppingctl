@@ -1,0 +1,9 @@
+[package]
+name = "toppingctl"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+hex-literal = "0.4.1"
+hidapi = "2.6.3"
+thiserror = "2.0.2"
