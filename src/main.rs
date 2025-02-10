@@ -30,47 +30,47 @@ fn main() {
 enum Property {
     
     Brightness {
-        #[arg(required(true), value_parser = clap::value_parser!(u8).range(0..3))]
+        #[arg(required(true), value_parser(clap::value_parser!(u8).range(0..3)))]
         value: u8,
     },
     AutoStandby {
-        #[arg(required(true), action(ArgAction::Set))]
+        #[arg(required(true), action(ArgAction::Set), value_parser(clap::builder::BoolishValueParser::new()))]
         state: bool,
     },
     HeadphoneGain {
-        #[arg(required(true), action(ArgAction::Set))]
+        #[arg(required(true), action(ArgAction::Set), value_parser(clap::builder::BoolishValueParser::new()))]
         state: bool,
     },
     HeadphoneOut {
-        #[arg(required(true), action(ArgAction::Set))]
+        #[arg(required(true), action(ArgAction::Set), value_parser(clap::builder::BoolishValueParser::new()))]
         state: bool,
     },
     LineOut {
-        #[arg(required(true), action(ArgAction::Set))]
+        #[arg(required(true), action(ArgAction::Set), value_parser(clap::builder::BoolishValueParser::new()))]
         state: bool,
     },
     InputMonitor {
         #[arg(required(true))]
         channel: u8,
-        #[arg(required(true), action(ArgAction::Set))]
+        #[arg(required(true), action(ArgAction::Set), value_parser(clap::builder::BoolishValueParser::new()))]
         state: bool,
     },
     InputPhantomPower {
         #[arg(required(true))]
         channel: u8,
-        #[arg(required(true), action(ArgAction::Set))]
+        #[arg(required(true), action(ArgAction::Set), value_parser(clap::builder::BoolishValueParser::new()))]
         state: bool,
     },
     InputImpedance {
         #[arg(required(true))]
         channel: u8,
-        #[arg(required(true), action(ArgAction::Set))]
+        #[arg(required(true), action(ArgAction::Set), value_parser(clap::builder::BoolishValueParser::new()))]
         state: bool,
     },
     InputMute {
         #[arg(required(true))]
         channel: u8,
-        #[arg(required(true), action(ArgAction::Set))]
+        #[arg(required(true), action(ArgAction::Set), value_parser(clap::builder::BoolishValueParser::new()))]
         state: bool,
     },
 }
