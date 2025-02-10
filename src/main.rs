@@ -1,5 +1,5 @@
+use clap::{ArgAction, Parser};
 use device::E2x2;
-use clap::Parser;
 mod device;
 
 fn main() {
@@ -24,19 +24,53 @@ fn main() {
     }
 }
 
-
-
 #[derive(Parser)]
 #[command(version, about, long_about = None)]
 #[derive(Debug, Copy, Clone)]
 enum Property {
-    Brightness{value: u8},
-    AutoStandby{state: bool},
-    HeadphoneGain{state: bool},
-    HeadphoneOut{state: bool},
-    LineOut{state: bool},
-    InputMonitor{channel: u8, state: bool},
-    InputPhantomPower{channel: u8, state: bool},
-    InputImpedance{channel: u8, state: bool},
-    InputMute{channel: u8, state: bool},
+    
+    Brightness {
+        #[arg(required(true), value_parser = clap::value_parser!(u8).range(0..3))]
+        value: u8,
+    },
+    AutoStandby {
+        #[arg(required(true), action(ArgAction::Set))]
+        state: bool,
+    },
+    HeadphoneGain {
+        #[arg(required(true), action(ArgAction::Set))]
+        state: bool,
+    },
+    HeadphoneOut {
+        #[arg(required(true), action(ArgAction::Set))]
+        state: bool,
+    },
+    LineOut {
+        #[arg(required(true), action(ArgAction::Set))]
+        state: bool,
+    },
+    InputMonitor {
+        #[arg(required(true))]
+        channel: u8,
+        #[arg(required(true), action(ArgAction::Set))]
+        state: bool,
+    },
+    InputPhantomPower {
+        #[arg(required(true))]
+        channel: u8,
+        #[arg(required(true), action(ArgAction::Set))]
+        state: bool,
+    },
+    InputImpedance {
+        #[arg(required(true))]
+        channel: u8,
+        #[arg(required(true), action(ArgAction::Set))]
+        state: bool,
+    },
+    InputMute {
+        #[arg(required(true))]
+        channel: u8,
+        #[arg(required(true), action(ArgAction::Set))]
+        state: bool,
+    },
 }
