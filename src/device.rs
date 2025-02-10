@@ -211,4 +211,16 @@ mod commands {
     pub(crate) const LINE_ON_1: [u8; 16] = hex!("22332001013402000000010000667700");
     pub(crate) const LINE_ON_2: [u8; 16] = hex!("2233200101310101c8520e0000667700");
     pub(crate) const LINE_ON_3: [u8; 16] = hex!("2233200101310201c8520e0000667700");
+
+    pub(crate) const IN1_VOLUME_0:  [u8; 16] = hex!("22332001012104020000000000667700");
+    pub(crate) const IN1_VOLUME_5:  [u8; 16] = hex!("22332001012104038e7a980000667700");
+    pub(crate) const IN1_VOLUME_10: [u8; 16] = hex!("22332001012104065316180000667700");
+    pub(crate) const IN1_VOLUME_15: [u8; 16] = hex!("223320010121040b3f30000000667700");
+    pub(crate) const IN1_VOLUME_20: [u8; 16] = hex!("22332001012104140000000000667700");
+
+    pub(crate) const IN2_VOLUME_0:  [u8; 16] = hex!("22332001012204020000000000667700");
+    pub(crate) const IN2_VOLUME_5:  [u8; 16] = hex!("22332001012204038e7a980000667700");
+    pub(crate) const IN2_VOLUME_10: [u8; 16] = hex!("22332001012204065316180000667700");
+    pub(crate) const IN2_VOLUME_15: [u8; 16] = hex!("223320010122040b3f30000000667700");
+    pub(crate) const IN2_VOLUME_20: [u8; 16] = hex!("22332001012204140000000000667700");
 }

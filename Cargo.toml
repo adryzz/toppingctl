@@ -4,6 +4,7 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
+clap = { version = "4.5.28", features = ["derive"] }
 hex-literal = "0.4.1"
 hidapi = "2.6.3"
 thiserror = "2.0.2"
