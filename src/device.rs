@@ -14,7 +14,7 @@ impl E2x2 {
     }
 
     fn send_command(&mut self, cmd: &[u8]) -> Result<usize, HidError> {
-        self.dev.write(&cmd)
+        self.dev.write(cmd)
     }
 
     pub fn auto_standby(&mut self, state: bool) -> Result<(), HidError> {
